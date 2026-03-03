@@ -1,6 +1,9 @@
 {
   "name": "unspokenmelodies",
+  "dependencies": {
+    "serve": "^14.0.0"
+  },
   "scripts": {
-    "start": "npx serve . -p ${PORT:-8080}"
+    "start": "serve . -p ${PORT:-8080}"
   }
 }
