@@ -1,0 +1,6 @@
+{
+  "name": "unspokenmelodies",
+  "scripts": {
+    "start": "npx serve . -p ${PORT:-8080}"
+  }
+}
