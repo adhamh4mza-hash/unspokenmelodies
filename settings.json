@@ -8,5 +8,7 @@
     "price_deposit": "1,500",
     "footer_text": "Looking forward to creating sounds together",
     "bg_color": "#9a9a8e",
-    "accent_color": "#c8a96e"
+    "accent_color": "#c8a96e",
+    "heading_font": "Cormorant Garamond",
+    "body_font": "Jost"
 }

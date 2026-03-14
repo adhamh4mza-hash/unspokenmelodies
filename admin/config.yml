@@ -1,9 +1,8 @@
 backend:
   name: github
-  repo: your-username/your-repo
+  repo: adhamh4mza-hash/unspokenmelodies
   branch: main
-  auth_type: implicit
-  app_id: YOUR_GITHUB_CLIENT_ID
+  base_url: https://unspokenmelodies-oauth-production.up.railway.app
 
 media_folder: "images"
 public_folder: "/images"
@@ -26,3 +25,23 @@ collections:
           - { label: "Footer Text", name: "footer_text", widget: "string" }
           - { label: "Background Color", name: "bg_color", widget: "color" }
           - { label: "Accent Color", name: "accent_color", widget: "color" }
+          - label: "Heading Font"
+            name: "heading_font"
+            widget: "select"
+            default: "Cormorant Garamond"
+            options:
+              - { label: "Cormorant Garamond (elegant serif)", value: "Cormorant Garamond" }
+              - { label: "Playfair Display (bold serif)", value: "Playfair Display" }
+              - { label: "Lora (warm serif)", value: "Lora" }
+              - { label: "Libre Baskerville (classic serif)", value: "Libre Baskerville" }
+              - { label: "Josefin Sans (modern sans)", value: "Josefin Sans" }
+          - label: "Body Font"
+            name: "body_font"
+            widget: "select"
+            default: "Jost"
+            options:
+              - { label: "Jost (clean modern)", value: "Jost" }
+              - { label: "Inter (neutral)", value: "Inter" }
+              - { label: "DM Sans (geometric)", value: "DM Sans" }
+              - { label: "Nunito (rounded)", value: "Nunito" }
+              - { label: "Raleway (elegant sans)", value: "Raleway" }

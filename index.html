@@ -26,6 +26,8 @@
       --ink-soft: #5a5a52;
       --accent: #c8a96e;
       --accent-dim: rgba(200, 169, 110, 0.2);
+      --font-heading: 'Cormorant Garamond', serif;
+      --font-body: 'Jost', sans-serif;
     }
 
     html {
@@ -42,7 +44,7 @@
       align-items: flex-start;
       justify-content: center;
       padding: 60px 20px;
-      font-family: 'Jost', sans-serif;
+      font-family: var(--font-body);
     }
 
     .page {
@@ -104,7 +106,7 @@
     }
 
     h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-heading);
       font-weight: 400;
       font-size: 2.6rem;
       color: var(--ink);
@@ -113,7 +115,7 @@
     }
 
     .subtitle {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-heading);
       font-style: italic;
       font-weight: 300;
       font-size: 1.15rem;
@@ -151,7 +153,7 @@
     }
 
     h2 {
-      font-family: 'Jost', sans-serif;
+      font-family: var(--font-body);
       font-weight: 500;
       font-size: 0.78rem;
       text-transform: uppercase;
@@ -209,7 +211,7 @@
       padding: 20px 28px;
       background: var(--accent-dim);
       border-left: 3px solid var(--accent);
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-heading);
       font-style: italic;
       font-size: 1.15rem;
       color: var(--ink-mid);
@@ -238,7 +240,7 @@
     }
 
     .payment-card .amount {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-heading);
       font-size: 1.6rem;
       font-weight: 600;
       color: var(--ink);
@@ -270,7 +272,7 @@
       padding-top: 24px;
       border-top: 1px solid rgba(30, 30, 26, 0.12);
       text-align: center;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-heading);
       font-weight: 600;
       font-size: 1rem;
       letter-spacing: 0.08em;
@@ -405,6 +407,18 @@
           s.price_total + ' <span style="font-size:1rem">EGP</span> <span class="badge">10% off</span>';
         document.getElementById('price-deposit').innerHTML =
           s.price_deposit + ' <span style="font-size:1rem">EGP</span>';
+
+        if (s.heading_font || s.body_font) {
+          const fonts = [...new Set([s.heading_font, s.body_font].filter(Boolean))];
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://fonts.googleapis.com/css2?family=' +
+            fonts.map(f => f.replace(/ /g, '+') + ':ital,wght@0,300;0,400;0,600;1,300;1,400').join('&family=') +
+            '&display=swap';
+          document.head.appendChild(link);
+          if (s.heading_font) document.documentElement.style.setProperty('--font-heading', `'${s.heading_font}', serif`);
+          if (s.body_font) document.documentElement.style.setProperty('--font-body', `'${s.body_font}', sans-serif`);
+        }
       });
   </script>
 </body>
