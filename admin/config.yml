@@ -1,0 +1,28 @@
+backend:
+  name: github
+  repo: your-username/your-repo
+  branch: main
+  auth_type: implicit
+  app_id: YOUR_GITHUB_CLIENT_ID
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Site Settings"
+        name: "settings"
+        file: "settings.json"
+        fields:
+          - { label: "Page Title", name: "page_title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Intro Paragraph", name: "intro", widget: "text" }
+          - { label: "Pull Quote", name: "pullquote", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Total Price (EGP)", name: "price_total", widget: "string" }
+          - { label: "Deposit Price (EGP)", name: "price_deposit", widget: "string" }
+          - { label: "Footer Text", name: "footer_text", widget: "string" }
+          - { label: "Background Color", name: "bg_color", widget: "color" }
+          - { label: "Accent Color", name: "accent_color", widget: "color" }
