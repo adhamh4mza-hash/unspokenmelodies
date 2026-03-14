@@ -67,7 +67,6 @@
       }
     }
 
-    /* Corner logo area */
     .logo-area {
       position: absolute;
       top: 36px;
@@ -97,7 +96,6 @@
       opacity: 0.5;
     }
 
-    /* Header */
     header {
       text-align: center;
       margin-bottom: 40px;
@@ -123,7 +121,6 @@
       letter-spacing: 0.03em;
     }
 
-    /* Intro */
     .intro {
       font-size: 0.93rem;
       line-height: 1.8;
@@ -132,7 +129,6 @@
       font-weight: 300;
     }
 
-    /* Sections */
     section {
       margin-bottom: 36px;
       animation: fadeUp 0.8s ease both;
@@ -208,7 +204,6 @@
       font-size: 1.1em;
     }
 
-    /* Pullquote */
     .pullquote {
       margin: 28px 0;
       padding: 20px 28px;
@@ -221,7 +216,6 @@
       letter-spacing: 0.01em;
     }
 
-    /* Payment highlight */
     .payment-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -271,7 +265,6 @@
       vertical-align: middle;
     }
 
-    /* Footer */
     footer {
       margin-top: 48px;
       padding-top: 24px;
@@ -308,7 +301,6 @@
 <body>
   <div class="page">
 
-    <!-- Logo top-right -->
     <div class="logo-area">
       <span class="logo-icon">🪘</span>
       <div class="logo-lines">
@@ -320,11 +312,11 @@
     </div>
 
     <header>
-      <h1>Group Handpan Workshop</h1>
-      <p class="subtitle">A shared sound experience guided by unspokenmelodies</p>
+      <h1 id="page-title">Group Handpan Workshop</h1>
+      <p class="subtitle" id="subtitle">A shared sound experience guided by unspokenmelodies</p>
     </header>
 
-    <p class="intro">
+    <p class="intro" id="intro">
       The Handpan Group Workshop is a space where people connect through rhythm, sound, and flow.
       No experience is needed — only curiosity and your hands. Together, we create an atmosphere
       of learning, peace, and fun.
@@ -339,8 +331,7 @@
         <li>Experience that "we're all in this together" rhythm</li>
         <li>Feel the energy of a group groove and how it changes everything</li>
       </ul>
-
-      <div class="pullquote">
+      <div class="pullquote" id="pullquote">
         "It's not just a workshop — it's an experience."
       </div>
     </section>
@@ -368,7 +359,7 @@
         </li>
         <li><strong>Format:</strong> In-person — small groups, maximum 4 students</li>
         <li><strong>Instrument:</strong> Provided if you don't own one, or bring your own</li>
-        <li><strong>Location:</strong> Madinaty</li>
+        <li><strong>Location:</strong> <span id="location">Madinaty</span></li>
       </ul>
     </section>
 
@@ -377,12 +368,13 @@
       <div class="payment-grid">
         <div class="payment-card">
           <div class="label">Total Value</div>
-          <div class="amount">3,000 <span style="font-size:1rem">EGP</span> <span class="badge">10% off</span></div>
+          <div class="amount" id="price-total">3,000 <span style="font-size:1rem">EGP</span> <span class="badge">10%
+              off</span></div>
           <div class="note">Full workshop price</div>
         </div>
         <div class="payment-card">
           <div class="label">To Secure Your Spot</div>
-          <div class="amount">1,500 <span style="font-size:1rem">EGP</span></div>
+          <div class="amount" id="price-deposit">1,500 <span style="font-size:1rem">EGP</span></div>
           <div class="note">Non-refundable if cancelled within 72h of the session</div>
         </div>
       </div>
@@ -391,11 +383,12 @@
       </ul>
     </section>
 
-    <footer>
+    <footer id="footer-text">
       Looking forward to creating sounds together
     </footer>
 
   </div>
+
   <script>
     fetch('/settings.json')
       .then(r => r.json())
@@ -408,8 +401,6 @@
         document.getElementById('pullquote').textContent = '"' + s.pullquote + '"';
         document.getElementById('location').textContent = s.location;
         document.getElementById('footer-text').textContent = s.footer_text;
-
-        // Prices — preserve the EGP and badge markup
         document.getElementById('price-total').innerHTML =
           s.price_total + ' <span style="font-size:1rem">EGP</span> <span class="badge">10% off</span>';
         document.getElementById('price-deposit').innerHTML =
