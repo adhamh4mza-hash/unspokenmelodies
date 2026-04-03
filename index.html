@@ -6,9 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Group Handpan Workshop – unspokenmelodies</title>
   <link rel="icon" type="image/svg+xml" href="/unspoken_melodies_logo.svg" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
-    rel="stylesheet" />
   <style>
     *,
     *::before,
@@ -18,285 +15,94 @@
       padding: 0;
     }
 
-    :root {
-      --bg: #9a9a8e;
-      --bg-light: #b0b0a4;
-      --paper: #f0ede6;
-      --ink: #1e1e1a;
-      --ink-mid: #3a3a34;
-      --ink-soft: #5a5a52;
-      --accent: #c8a96e;
-      --accent-dim: rgba(200, 169, 110, 0.2);
-      --font-heading: 'Cormorant Garamond', serif;
-      --font-body: 'Jost', sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      background-color: var(--bg);
-      background-image:
-        radial-gradient(ellipse at 20% 10%, rgba(255, 255, 240, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 90%, rgba(0, 0, 0, 0.15) 0%, transparent 50%);
+      background-color: #9a9a8e;
+      font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+      font-size: 15px;
+      color: #1a1a17;
       min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 60px 20px;
-      font-family: var(--font-body);
+      padding: 56px 40px 80px;
     }
 
     .page {
-      background: var(--paper);
-      max-width: 760px;
-      width: 100%;
-      padding: 64px 72px;
+      max-width: 700px;
+      margin: 0 auto;
       position: relative;
-      box-shadow: 0 8px 60px rgba(0, 0, 0, 0.25), 0 2px 12px rgba(0, 0, 0, 0.15);
-      animation: fadeUp 0.8s ease both;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(24px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .logo-area {
       position: absolute;
-      top: 36px;
-      right: 48px;
-      text-align: right;
+      top: 0;
+      right: 0;
     }
 
-    .logo-icon {
-      font-size: 36px;
-      display: block;
-      line-height: 1;
-      opacity: 0.7;
-    }
-
-    .logo-lines {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 3px;
-      margin-top: 6px;
-    }
-
-    .logo-lines span {
-      display: block;
-      height: 1.5px;
-      background: var(--ink-soft);
-      opacity: 0.5;
+    .logo-area img {
+      width: 72px;
+      height: auto;
     }
 
     header {
       text-align: center;
-      margin-bottom: 40px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid rgba(30, 30, 26, 0.12);
+      padding-top: 16px;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-family: var(--font-heading);
-      font-weight: 400;
-      font-size: 2.6rem;
-      color: var(--ink);
-      letter-spacing: 0.02em;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      font-family: var(--font-heading);
-      font-style: italic;
-      font-weight: 300;
-      font-size: 1.15rem;
-      color: var(--ink-soft);
-      letter-spacing: 0.03em;
-    }
-
-    .intro {
-      font-size: 0.93rem;
-      line-height: 1.8;
-      color: var(--ink-mid);
-      margin-bottom: 36px;
-      font-weight: 300;
-    }
-
-    section {
-      margin-bottom: 36px;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    section:nth-child(2) {
-      animation-delay: 0.1s;
-    }
-
-    section:nth-child(3) {
-      animation-delay: 0.2s;
-    }
-
-    section:nth-child(4) {
-      animation-delay: 0.3s;
-    }
-
-    section:nth-child(5) {
-      animation-delay: 0.4s;
-    }
-
-    h2 {
-      font-family: var(--font-body);
-      font-weight: 500;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--ink);
-      margin-bottom: 14px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid rgba(30, 30, 26, 0.1);
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      font-size: 0.9rem;
-      color: var(--ink-mid);
-      font-weight: 300;
-      line-height: 1.7;
-      padding: 4px 0 4px 18px;
-      position: relative;
-    }
-
-    ul li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 400;
-    }
-
-    ul li strong {
-      font-weight: 500;
-      color: var(--ink);
-    }
-
-    .sub-list {
-      margin-top: 4px;
-      margin-left: 10px;
-    }
-
-    .sub-list li {
-      font-size: 0.86rem;
-      padding-left: 14px;
-    }
-
-    .sub-list li::before {
-      content: '·';
-      font-size: 1.1em;
-    }
-
-    .pullquote {
-      margin: 28px 0;
-      padding: 20px 28px;
-      background: var(--accent-dim);
-      border-left: 3px solid var(--accent);
-      font-family: var(--font-heading);
-      font-style: italic;
-      font-size: 1.15rem;
-      color: var(--ink-mid);
-      letter-spacing: 0.01em;
-    }
-
-    .payment-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 6px;
-    }
-
-    .payment-card {
-      background: rgba(30, 30, 26, 0.04);
-      border: 1px solid rgba(30, 30, 26, 0.1);
-      padding: 16px 18px;
-    }
-
-    .payment-card .label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--ink-soft);
+      font-size: 1.35rem;
+      font-weight: bold;
       margin-bottom: 4px;
     }
 
-    .payment-card .amount {
-      font-family: var(--font-heading);
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--ink);
+    .subtitle {
+      font-style: italic;
+      font-size: 1rem;
     }
 
-    .payment-card .note {
-      font-size: 0.75rem;
-      color: var(--ink-soft);
-      font-weight: 300;
-      margin-top: 3px;
-      line-height: 1.5;
+    .intro {
+      line-height: 1.55;
+      margin-bottom: 22px;
     }
 
-    .badge {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.65rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding: 2px 7px;
-      margin-left: 8px;
-      vertical-align: middle;
+    section {
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      padding-left: 32px;
+      list-style-type: disc;
+    }
+
+    ul li {
+      line-height: 1.6;
+      margin-bottom: 2px;
+    }
+
+    .sub-list {
+      padding-left: 28px;
+      margin-top: 2px;
+      list-style-type: disc;
+    }
+
+    .nb-item {
+      list-style-type: square;
+      font-weight: bold;
+    }
+
+    .pullquote {
+      font-style: italic;
+      margin: 14px 0 0 32px;
     }
 
     footer {
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(30, 30, 26, 0.12);
       text-align: center;
-      font-family: var(--font-heading);
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      color: var(--ink);
-    }
-
-    @media (max-width: 600px) {
-      .page {
-        padding: 40px 28px;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .payment-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .logo-area {
-        top: 20px;
-        right: 24px;
-      }
+      font-weight: bold;
+      margin-top: 36px;
     }
   </style>
 </head>
@@ -305,13 +111,7 @@
   <div class="page">
 
     <div class="logo-area">
-      <span class="logo-icon">🪘</span>
-      <div class="logo-lines">
-        <span style="width:40px"></span>
-        <span style="width:28px"></span>
-        <span style="width:34px"></span>
-        <span style="width:20px"></span>
-      </div>
+      <img src="/unspoken_melodies_logo.svg" alt="unspokenmelodies" />
     </div>
 
     <header>
@@ -319,76 +119,57 @@
       <p class="subtitle" id="subtitle">A shared sound experience guided by unspokenmelodies</p>
     </header>
 
-    <p class="intro" id="intro">
-      The Handpan Group Workshop is a space where people connect through rhythm, sound, and flow.
-      No experience is needed — only curiosity and your hands. Together, we create an atmosphere
-      of learning, peace, and fun.
-    </p>
+    <p class="intro" id="intro">The Handpan Group Workshop is a space where people connect through rhythm, sound, and flow. No experience is needed, only curiosity and your hands. Together, we create an atmosphere of learning, peace, and fun.</p>
 
     <section>
-      <h2>Why join a group workshop</h2>
+      <h2>Why join group workshop:</h2>
       <ul>
-        <li>Meet like-minded people who share the same curiosity for sound and creativity</li>
-        <li>Laugh, learn, and play together — no pressure, no perfection</li>
-        <li>Discover how mistakes can turn into music</li>
-        <li>Experience that "we're all in this together" rhythm</li>
+        <li>Meet like-minded people who share the same curiosity for sound and creativity.</li>
+        <li>Laugh, learn, and play together — no pressure, no perfection.</li>
+        <li>Discover how mistakes can turn into music.</li>
+        <li>Experience that "we're all in this together" rhythm.</li>
         <li>Feel the energy of a group groove and how it changes everything</li>
       </ul>
-      <div class="pullquote" id="pullquote">
-        "It's not just a workshop — it's an experience."
-      </div>
+      <p class="pullquote" id="pullquote">"It's not just a workshop — it's an experience."</p>
     </section>
 
     <section>
-      <h2>What you will learn</h2>
+      <h2>What you will learn:</h2>
       <ul>
-        <li>Introduction to the Handpan — posture, touch, and first sounds</li>
-        <li>Experiencing the beauty of group coordination</li>
+        <li>Introduction to the Handpan – posture, touch, and first sounds</li>
+        <li>Experiencing the beauty of group coordination.</li>
         <li>Learn an emotional melody</li>
-        <li>Basics of improvisation and creating your own melody</li>
-        <li>Simple introduction to music theory on the Handpan</li>
+        <li>Basics of improvisation and creating your own melody.</li>
+        <li>Simple Introduction to Music Theory on the Handpan.</li>
       </ul>
     </section>
 
     <section>
-      <h2>Workshop Details</h2>
+      <h2>Workshop Details:</h2>
       <ul>
         <li>
-          <strong>Duration:</strong> 7.5 hours total
+          Course Duration: 7.5 hours that be divided into-
           <ul class="sub-list">
-            <li>Three 2.5-hour sessions across three consecutive days</li>
-            <li><strong>All sessions run back to back across the set days</strong></li>
+            <li>Three 2.5-hour sessions across a three day time period.</li>
+            <li class="nb-item">N.B; All sessions will be back to back across the set number of days.</li>
           </ul>
         </li>
-        <li><strong>Format:</strong> In-person — small groups, maximum 4 students</li>
-        <li><strong>Instrument:</strong> Provided if you don't own one, or bring your own</li>
-        <li><strong>Location:</strong> <span id="location">Madinaty</span></li>
+        <li>Format: In-person (small groups, maximum 4 students)</li>
+        <li>Instrument: Provided if you don't own one / bring your own if you have one.</li>
+        <li>Location: <span id="location">Madinaty</span></li>
       </ul>
     </section>
 
     <section>
-      <h2>Payment Details</h2>
-      <div class="payment-grid">
-        <div class="payment-card">
-          <div class="label">Total Value</div>
-          <div class="amount" id="price-total">3,000 <span style="font-size:1rem">EGP</span> <span class="badge">10%
-              off</span></div>
-          <div class="note">Full workshop price</div>
-        </div>
-        <div class="payment-card">
-          <div class="label">To Secure Your Spot</div>
-          <div class="amount" id="price-deposit">1,500 <span style="font-size:1rem">EGP</span></div>
-          <div class="note">Non-refundable if cancelled within 72h of the session</div>
-        </div>
-      </div>
-      <ul style="margin-top:14px">
-        <li>Remaining balance due 48 hours before the first session</li>
+      <h2>Payment details:</h2>
+      <ul>
+        <li>Value: <span id="price-total">3,000</span> EGP (<em>10% off</em>)</li>
+        <li>To secure your spot: <span id="price-deposit">1,500</span> EGP (non-refundable if cancelled 72h before the session)</li>
+        <li>Remaining payment due 48h before the first session.</li>
       </ul>
     </section>
 
-    <footer id="footer-text">
-      Looking forward to creating sounds together
-    </footer>
+    <footer id="footer-text">Looking forward to creating sounds together</footer>
 
   </div>
 
@@ -396,30 +177,15 @@
     fetch('/settings.json')
       .then(r => r.json())
       .then(s => {
-        document.documentElement.style.setProperty('--bg', s.bg_color);
-        document.documentElement.style.setProperty('--accent', s.accent_color);
-        document.getElementById('page-title').textContent = s.page_title;
-        document.getElementById('subtitle').textContent = s.subtitle;
-        document.getElementById('intro').textContent = s.intro;
-        document.getElementById('pullquote').textContent = '"' + s.pullquote + '"';
-        document.getElementById('location').textContent = s.location;
-        document.getElementById('footer-text').textContent = s.footer_text;
-        document.getElementById('price-total').innerHTML =
-          s.price_total + ' <span style="font-size:1rem">EGP</span> <span class="badge">10% off</span>';
-        document.getElementById('price-deposit').innerHTML =
-          s.price_deposit + ' <span style="font-size:1rem">EGP</span>';
-
-        if (s.heading_font || s.body_font) {
-          const fonts = [...new Set([s.heading_font, s.body_font].filter(Boolean))];
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = 'https://fonts.googleapis.com/css2?family=' +
-            fonts.map(f => f.replace(/ /g, '+') + ':ital,wght@0,300;0,400;0,600;1,300;1,400').join('&family=') +
-            '&display=swap';
-          document.head.appendChild(link);
-          if (s.heading_font) document.documentElement.style.setProperty('--font-heading', `'${s.heading_font}', serif`);
-          if (s.body_font) document.documentElement.style.setProperty('--font-body', `'${s.body_font}', sans-serif`);
-        }
+        if (s.bg_color) document.body.style.backgroundColor = s.bg_color;
+        if (s.page_title) document.getElementById('page-title').textContent = s.page_title;
+        if (s.subtitle) document.getElementById('subtitle').textContent = s.subtitle;
+        if (s.intro) document.getElementById('intro').textContent = s.intro;
+        if (s.pullquote) document.getElementById('pullquote').textContent = '\u201c' + s.pullquote + '\u201d';
+        if (s.location) document.getElementById('location').textContent = s.location;
+        if (s.footer_text) document.getElementById('footer-text').textContent = s.footer_text;
+        if (s.price_total) document.getElementById('price-total').textContent = s.price_total;
+        if (s.price_deposit) document.getElementById('price-deposit').textContent = s.price_deposit;
       });
   </script>
 </body>
