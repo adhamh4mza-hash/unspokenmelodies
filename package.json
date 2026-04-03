@@ -4,6 +4,6 @@
     "serve": "^14.0.0"
   },
   "scripts": {
-    "start": "serve . -p ${PORT:-8080}"
+    "start": "serve . -l tcp://0.0.0.0:${PORT:-8080}"
   }
 }
