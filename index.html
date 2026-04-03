@@ -21,7 +21,7 @@
       font-size: 15px;
       color: #1a1a17;
       min-height: 100vh;
-      padding: 56px 40px 80px;
+      padding: 24px 18px 60px;
     }
 
     .page {
@@ -30,41 +30,40 @@
       position: relative;
     }
 
+    /* Mobile: logo flows above header */
     .logo-area {
-      position: absolute;
-      top: 0;
-      right: 0;
+      text-align: right;
+      margin-bottom: 10px;
     }
 
     .logo-area img {
-      width: 72px;
+      width: 56px;
       height: auto;
     }
 
     header {
       text-align: center;
-      padding-top: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: 1.35rem;
+      font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 4px;
     }
 
     .subtitle {
       font-style: italic;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     .intro {
       line-height: 1.55;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     section {
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     h2 {
@@ -74,7 +73,7 @@
     }
 
     ul {
-      padding-left: 32px;
+      padding-left: 24px;
       list-style-type: disc;
     }
 
@@ -84,7 +83,7 @@
     }
 
     .sub-list {
-      padding-left: 28px;
+      padding-left: 22px;
       margin-top: 2px;
       list-style-type: disc;
     }
@@ -96,13 +95,84 @@
 
     .pullquote {
       font-style: italic;
-      margin: 14px 0 0 32px;
+      margin: 12px 0 0 24px;
     }
 
     footer {
       text-align: center;
       font-weight: bold;
-      margin-top: 36px;
+      margin-top: 32px;
+    }
+
+    /* Tablet */
+    @media (min-width: 480px) {
+      body {
+        padding: 40px 32px 70px;
+      }
+
+      .logo-area img {
+        width: 64px;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      ul {
+        padding-left: 28px;
+      }
+
+      .sub-list {
+        padding-left: 26px;
+      }
+
+      .pullquote {
+        margin-left: 28px;
+      }
+    }
+
+    /* Desktop: logo absolutely positioned top-right */
+    @media (min-width: 700px) {
+      body {
+        padding: 56px 40px 80px;
+      }
+
+      .logo-area {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-bottom: 0;
+        text-align: right;
+      }
+
+      .logo-area img {
+        width: 72px;
+      }
+
+      header {
+        padding-top: 16px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 1.35rem;
+      }
+
+      ul {
+        padding-left: 32px;
+      }
+
+      .sub-list {
+        padding-left: 28px;
+      }
+
+      .pullquote {
+        margin-left: 32px;
+      }
+
+      section {
+        margin-bottom: 22px;
+      }
     }
   </style>
 </head>
